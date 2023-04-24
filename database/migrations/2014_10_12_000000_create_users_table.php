@@ -18,6 +18,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('token');
+            $table->integer('connection_id');
+            $table->enum('user_status',['Online','Offline']);
+            $table->string('user_image');
             $table->timestamps();
         });
     }
